@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Allows you to upload and preview images",
   "main": "dist/image-preview.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brewhk/react-image-preview.git"
+  },
   "scripts": {
     "build": "webpack"
   },
