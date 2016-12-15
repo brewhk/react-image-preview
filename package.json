@@ -1,6 +1,6 @@
 {
   "name": "react-image-preview",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Allows you to upload and preview images",
   "main": "src/ImagePreview.jsx",
   "repository": {
