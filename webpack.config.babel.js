@@ -1,5 +1,7 @@
+import webpack from 'webpack';
+
 module.exports = {
-  entry: "src/ImagePreview.jsx",
+  entry: "./src/ImagePreview.jsx",
   output: {
     filename: "dist/image-preview.js"
   },
