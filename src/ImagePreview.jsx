@@ -12,6 +12,7 @@ export default class ImagePreview extends Component {
   previewFiles(event) {
 
     const fileNameRegEx = new RegExp(this.props.extensionRegex, this.props.extensionRegexFlags);
+    const files = event.target.files;
 
     this.setState({
       images: []
@@ -43,8 +44,6 @@ export default class ImagePreview extends Component {
 
       }
 
-      const files = event.target.files;
-
       // If there are files, run `readAndPreview` on each of them
       if (files) {
         [].forEach.call(files, readAndPreview);
@@ -61,8 +60,8 @@ export default class ImagePreview extends Component {
         <div>
           {this.state.images.map((image) => (
             this.props.wrapper(
-              <div key={tile}>
-                <img src={tile} />
+              <div key={image}>
+                <img src={image} />
               </div>
             )
           ))}
@@ -88,5 +87,6 @@ ImagePreview.defaultProps = {
   extensionRegexFlags: 'i',
   unsupportedTypeError: (filename) => new Error(`${filename} has an unsupported file type`),
   exceedMaxFileSizeError: (filename) => new Error(`${filename} is too large`),
-  maxFileSize: 5242880
+  maxFileSize: 5242880,
+  onChange: () => undefined
 }
